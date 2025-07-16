@@ -19,14 +19,35 @@ Use console.log() to clearly show the before-and-after type conversions.
 */
 
 
+// Task 1: Debugging
 let result = "5" - 2;
-console.log("The result is: " + result);
+console.log("The result is: " + result); // no need to fix, implicit coversion works here.
 
-let isValid = Boolean("false");
+
+let isValid = Boolean("false"); 
 if (isValid) {
-    console.log("This is valid!");
+    console.log("This is valid!"); // This is correct. "False" is not an empty string. So it's considered truthy.
 }
 
 let age = "25";
-let totalAge = age + 5;
-console.log("Total Age: " + totalAge);
+let ageNum = Number(age)
+let totalAge = ageNum + 5;
+console.log("Total Age: " + totalAge); //This one, I turned string "age" into a number in order that the concatenation with + operator is valid 
+
+
+
+//Task 2: Own examples
+  
+
+let blueLemon = Boolean(undefined);
+if (blueLemon) {
+  console.log("Lemons are blue!");
+} else {
+  console.log("Lemons aren't blue!"); // Example of explicit conversion, converting 'undefined' to false.
+}
+
+
+let purchaseAmount = "5";
+let totalPrice = purchaseAmount*20;
+console.log("The total price is" + "$" + totalPrice); 
+// Example of implicit conversion, converting a string to a number during multification.
